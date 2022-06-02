@@ -3,7 +3,7 @@ ARG NGINX_RTMP_VERSION=1.2.2
 
 ##############################
 # Build the NGINX-build image.
-FROM alpine:3.15.3 as build-nginx
+FROM alpine:3.11 as build-nginx
 ARG NGINX_VERSION
 ARG NGINX_RTMP_VERSION
 ARG MAKEFLAGS="-j4"
@@ -57,7 +57,7 @@ RUN \
 
 ##########################
 # Build the release image.
-FROM alpine:3.15.3
+FROM alpine:3.11
 LABEL MAINTAINER Alfred Gutierrez <alf.g.jr@gmail.com>
 
 # Set default ports.
